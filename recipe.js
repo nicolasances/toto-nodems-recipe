@@ -2,20 +2,20 @@ var express = require('express');
 var Promise = require('promise');
 var bodyParser = require("body-parser");
 
-var getRecipesDlg = require('./dlg/GetRecipesDelegate');
-var getRecipeDlg = require('./dlg/GetRecipeDelegate');
-var postRecipeDlg = require('./dlg/PostRecipeDelegate');
-var putRecipeDlg = require('./dlg/PutRecipeDelegate');
+var getRecipesDlg = require('./dlg/recipe/GetRecipesDelegate');
+var getRecipeDlg = require('./dlg/recipe/GetRecipeDelegate');
+var postRecipeDlg = require('./dlg/recipe/PostRecipeDelegate');
+var putRecipeDlg = require('./dlg/recipe/PutRecipeDelegate');
 
-var getIngredientsDlg = require('./dlg/GetIngredientsDelegate');
-var postIngredientDlg = require('./dlg/PostIngredientDelegate');
-var deleteIngredientDlg = require('./dlg/DeleteIngredientDelegate');
-var putIngredientDlg = require('./dlg/PutIngredientDelegate');
+var getIngredientsDlg = require('./dlg/ingredient/GetIngredientsDelegate');
+var postIngredientDlg = require('./dlg/ingredient/PostIngredientDelegate');
+var deleteIngredientDlg = require('./dlg/ingredient/DeleteIngredientDelegate');
+var putIngredientDlg = require('./dlg/ingredient/PutIngredientDelegate');
 
-var getStepsDlg = require('./dlg/GetStepsDelegate');
-var postStepDlg = require('./dlg/PostStepDelegate');
-var deleteStepDlg = require('./dlg/DeleteStepDelegate');
-var putStepDlg = require('./dlg/PutStepDelegate');
+var getStepsDlg = require('./dlg/step/GetStepsDelegate');
+var postStepDlg = require('./dlg/step/PostStepDelegate');
+var deleteStepDlg = require('./dlg/step/DeleteStepDelegate');
+var putStepDlg = require('./dlg/step/PutStepDelegate');
 
 var app = express();
 
