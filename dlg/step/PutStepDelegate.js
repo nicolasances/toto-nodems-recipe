@@ -10,7 +10,7 @@ exports.putStep = function(id, update) {
 
     return MongoClient.connect(config.mongoUrl, function(err, db) {
 
-      db.db(config.dbName).collection(config.collections.steps).updateOne({_id: new mongo.ObjectId(id)}, converter.updateStep(recipeId, update), function(err, res) {
+      db.db(config.dbName).collection(config.collections.steps).updateOne({_id: new mongo.ObjectId(id)}, converter.updateStep(update), function(err, res) {
 
         db.close();
 

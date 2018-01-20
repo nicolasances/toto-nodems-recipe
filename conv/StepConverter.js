@@ -2,7 +2,7 @@
 /**
  * Udpates the step of a recipe with the provided data
  */
-exports.updateStep = function(recipeId, data) {
+exports.updateStep = function(data) {
 
   return {$set : {description : data.description}};
 
