@@ -4,7 +4,7 @@ var converter = require('../../conv/StepConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.putStep = function(recipeId, update) {
+exports.putStep = function(id, update) {
 
   return new Promise(function(success, failure) {
 
