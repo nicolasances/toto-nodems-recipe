@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res) {res.send({status: 'running'});});
 app.get('/recipes', function(req, res) {getRecipesDlg.getRecipes().then(function(result) {res.send(result);});});
-app.post('/recipes', function(req, res) {postRecipeDlg.postTax(req.body).then(function(result) {res.send(result);});});
+app.post('/recipes', function(req, res) {postRecipeDlg.postRecipe(req.body).then(function(result) {res.send(result);});});
 app.get('/recipes/:id', function(req, res) {getRecipeDlg.getRecipe(req.params.id).then(function(result) {res.send(result);});});
 app.put('/recipes/:id', function(req, res) {putRecipeDlg.putRecipe(req.params.id, req.body).then(function(result) {res.send(result);});});
 
