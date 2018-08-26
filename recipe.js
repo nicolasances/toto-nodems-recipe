@@ -18,17 +18,19 @@ var postStepDlg = require('./dlg/step/PostStepDelegate');
 var deleteStepDlg = require('./dlg/step/DeleteStepDelegate');
 var putStepDlg = require('./dlg/step/PutStepDelegate');
 
+var apiName = 'recipe';
+
 var app = express();
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, GoogleIdToken");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header("Access-Control-Allow-Methods", "OPTIONS, GET, PUT, POST, DELETE");
   next();
 });
 app.use(bodyParser.json());
 
-app.get('/', function(req, res) {res.send({status: 'running'});});
+app.get('/', function(req, res) {res.send({api: apiName, status: 'running'});});
 app.get('/recipes', function(req, res) {logger.apiCalled('recipe', '/recipes', 'GET', req.query, req.params, req.body); getRecipesDlg.getRecipes().then(function(result) {res.send(result);});});
 app.post('/recipes', function(req, res) {logger.apiCalled('recipe', '/recipes', 'POST', req.query, req.params, req.body); postRecipeDlg.postRecipe(req.body).then(function(result) {res.send(result);});});
 app.get('/recipes/:id', function(req, res) {logger.apiCalled('recipe', '/recipes/{id}', 'GET', req.query, req.params, req.body); getRecipeDlg.getRecipe(req.params.id).then(function(result) {res.send(result);});});
