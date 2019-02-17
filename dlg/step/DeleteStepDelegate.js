@@ -4,7 +4,7 @@ var converter = require('../../conv/StepConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.getStep = function(req) {
+exports.do = function(req) {
 
   var id = req.params.iid;
 

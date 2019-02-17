@@ -4,7 +4,7 @@ var converter = require('../../conv/RecipeConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.getRecipe = function(id) {
+exports.do = function(id) {
 
   var id = req.params.id;
 

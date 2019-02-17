@@ -4,7 +4,7 @@ var converter = require('../../conv/IngredientConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.getIngredient = function(req) {
+exports.do = function(req) {
 
   var id = req.params.iid;
 
