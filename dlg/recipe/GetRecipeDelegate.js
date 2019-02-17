@@ -6,6 +6,8 @@ var MongoClient = mongo.MongoClient;
 
 exports.getRecipe = function(id) {
 
+  var id = req.params.id;
+
   return new Promise(function(success, failure) {
 
     return MongoClient.connect(config.mongoUrl, function(err, db) {

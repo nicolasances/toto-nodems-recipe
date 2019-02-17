@@ -4,7 +4,9 @@ var converter = require('../../conv/IngredientConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.getIngredients = function(recipeId) {
+exports.getIngredients = function(req) {
+
+  var recipeId = req.params.id;
 
   return new Promise(function(success, failure) {
 

@@ -4,7 +4,9 @@ var converter = require('../../conv/RecipeConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.postRecipe = function(recipe) {
+exports.postRecipe = function(req) {
+
+  var recipe = req.body;
 
   return new Promise(function(success, failure) {
 
